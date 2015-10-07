@@ -1,6 +1,27 @@
+
+
+
 /*Events: relevant documents*/
 
 wikiEntryTemplate = doT.template(document.getElementById('relevantDocs_tmpl').text);
+
+function closeTile(parID) {
+	$("#"+parID).remove();
+	
+	$.ajax({
+			url: '/voteUnrelevant',
+			type: 'POST',
+			data: {'entry-id':parID},
+			contentType: 'application/json; charset=utf-8',
+			success: function (response) {
+				/*alert(response.status);*/
+			},
+			error: function () {
+				/*alert("error");*/
+			}
+		}); 	
+
+}
 
 function addRelevantEntry(json_event) {
 	if (json_event["type"] == "wiki")

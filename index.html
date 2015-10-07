@@ -104,10 +104,12 @@
 
         <!-- Page Features -->
         <div class="row text-center" id="relevantDocs">
-
+			
+		
             <!-- Template for the dot.js template engine (https://raw.githubusercontent.com/olado/doT/master/doT.js) -->
             <script id="relevantDocs_tmpl" type="text/x-dot-template">
                 <div class="col-sm-4 col-md-3 col-xl-3 hero-feature" id="{{=it.entry_id}}">
+						<button type="button" align="right" onclick="closeTile('{{=it.entry_id}}');" >X</button>
                         <div class="modal fade" id="{{=it.entry_id}}Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                             <div class="modal-dialog modal-lg modal-sm" role="document">
                                 <div class="modal-content">
